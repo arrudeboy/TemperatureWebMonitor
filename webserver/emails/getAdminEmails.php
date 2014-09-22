@@ -4,7 +4,7 @@ $admin_email2 = "";
 $admin_email3 = "";
 $admin_email4 = "";
 $array = array();
-$file = fopen('admin_emails.config', 'r') or die ('CANT OPEN FILE');
+$file = fopen('config/admin_emails.config', 'r') or die ('CANT OPEN FILE');
 while(!feof($file)){
     $line = fgets($file);
     $array[] = $line;
