@@ -14,7 +14,7 @@ PASSWORD = "mypasswd"
 MAILTO = ''
 
 # open file with full path 
-with open('/mnt/sda1/temperaturewebmonitor/config/admin_emails.config') as data:
+with open('/mnt/sda1/webserver/config/admin_emails.config') as data:
     datalines = (line.rstrip('\n') for line in data)
     for line in datalines:
         MAILTO += line
