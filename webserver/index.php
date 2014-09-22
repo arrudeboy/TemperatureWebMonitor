@@ -6,9 +6,9 @@
 </head>
 <body onload="setInterval(refresh, 1000);"> 
       
-     <?php require('getAdminEmails.php'); 
+     <?php require('emails/getAdminEmails.php'); 
      
-      $file = fopen('limitTemp.config', 'r') or die ('CANT OPEN FILE');
+      $file = fopen('config/limitTemp.config', 'r') or die ('CANT OPEN FILE');
       
       $array = array();
       
