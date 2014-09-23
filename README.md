@@ -5,7 +5,7 @@ This project concerns the implementation of a security platform for the manageme
 
 
 IMPORTANT INFO:
-===============
+---------------
 
  - I assume that who try to implement this project has basic knowledge about Arduino boards and Linux enviroments. If it is false, please visit the Arduino Yun official web for gettting started (http://arduino.cc/en/Guide/ArduinoYun).
  
