@@ -152,7 +152,7 @@ function readPhasesAndAlarm(alarm,phase1,phase2,phase3){
 		document.getElementById("btnPhase3en").style.background='#FFFFFF';                                                                             
 		document.getElementById("btnPhase3di").style.background='#FF0000'; 
 	}
-	else if (phase3 == "11"){
+	else if (phase3 == "1"){
 		document.getElementById("btnPhase3en").style.background='#009933';                                                                             
 		document.getElementById("btnPhase3di").style.background='#FFFFFF';  
 	} 		                                                                                                          	             
