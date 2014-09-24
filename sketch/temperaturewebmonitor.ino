@@ -1,9 +1,10 @@
-//includes for work with the server web panel
+// Includes for work with the server web panel
 #include <Bridge.h>
 #include <YunServer.h>
 #include <YunClient.h>
 #include <FileIO.h>
-//includes for work with temperature sensors
+
+// Includes for work with temperature sensors
 #include <OneWire.h>
 #include <DallasTemperature.h>
 
@@ -13,6 +14,7 @@ OneWire oneWire(8);
 // Pass our oneWire reference to Dallas Temperature.
 DallasTemperature sensors(&oneWire);
 
+// Here you must to put your sensors addresses
 DeviceAddress Probe01 = { 0x28, 0xF8, 0x9D, 0x22, 0x05, 0x00, 0x00, 0xD4 }; 
 DeviceAddress Probe02 = { 0x28, 0x4C, 0xA8, 0x22, 0x05, 0x00, 0x00, 0x59 };
 DeviceAddress Probe03 = { 0x28, 0x65, 0xB3, 0x22, 0x05, 0x00, 0x00, 0x75 };
@@ -21,7 +23,7 @@ DeviceAddress Probe03 = { 0x28, 0x65, 0xB3, 0x22, 0x05, 0x00, 0x00, 0x75 };
 YunServer server; 
 YunClient client;
 
-//counter loops and loop number saver for controlling phases and alarm. 
+// Counter loops and current loop number are variables used for controlling phases and alarm. 
 unsigned int loop_counter, loop_number;
 
  
@@ -53,7 +55,7 @@ void setup() {
   // Initialize the Temperature measurement library
   sensors.begin();
   
-  // set the resolution to 10 bit (Can be 9 to 12 bits .. lower is faster)
+  // Set the resolution to 10 bit (Can be 9 to 12 bits .. lower is faster)
   sensors.setResolution(Probe01, 10);
   sensors.setResolution(Probe02, 10);
   sensors.setResolution(Probe03, 10);
@@ -84,7 +86,7 @@ void loop() {
     statesensor_file.close();
     delay(250);
     
-    //Get the limit temperature value. I'l use the same file variable declared above
+    // Get the limit temperature value. I'l use the same file variable declared above
     char limit_temp[5];
     float max_value;
     int i=0;
@@ -98,11 +100,12 @@ void loop() {
     limittemp_file.close();
     delay(250); 
     
-    //Do the following tasks every 5 polled loops
-    //Asking about phases and alarm states
+    // Do the following tasks every 5 polled loops
+    // Asking about phases and alarm states
     if(fmod(loop_counter,5)==0){
 
-      //Passing digital values of the phases and the alarm to the web server. It will be executed by "readPhasesAndAlarm" javascript function
+      // Passing digital values of the phases and the alarm to the web server. 
+      // It will be executed by "readPhasesAndAlarm" javascript function.
       String sendData = "<script> readPhasesAndAlarm(";
       
       sendData += String(digitalRead(10));  
@@ -134,7 +137,6 @@ void loop() {
       client.print("<p style='margin-left:220px'><strong> Current temperature at sensor 3: </strong></p>");
       printHtmlHeaderTemp(c3,3);      
       
-    
       /* 
         Querying the temperature values of sensor to avoid device damages
       
@@ -147,30 +149,30 @@ void loop() {
            ((c3 == '1') && (printTemperature(Probe03) > max_value))) && (loop_counter > (loop_number+25)))
         { 
         
-        Process p2;
+           Process p2;
         
-        //this process also call the shutdown cluster from the python script
-        p2.begin("/mnt/sda1/webexample/sendLogTempByMail.py");
+           // This process also call the shutdown cluster from the python script
+           p2.begin("/mnt/sda1/webexample/sendLogTempByMail.py");
 
-        if (c1 == '1')
-          p2.addParameter(String(printTemperature(Probe01),2)+" °C");
-        else p2.addParameter("DISABLED");        
+           if (c1 == '1')
+               p2.addParameter(String(printTemperature(Probe01),2)+" °C");
+           else p2.addParameter("DISABLED");        
 
-        if (c2 == '1')        
-          p2.addParameter(String(printTemperature(Probe02),2)+" °C");
-        else p2.addParameter("DISABLED");
+           if (c2 == '1')        
+               p2.addParameter(String(printTemperature(Probe02),2)+" °C");
+           else p2.addParameter("DISABLED");
 
-        if (c3 == '1')        
-          p2.addParameter(String(printTemperature(Probe03),2)+" °C");
-        else p2.addParameter("DISABLED");
+           if (c3 == '1')        
+               p2.addParameter(String(printTemperature(Probe03),2)+" °C");
+           else p2.addParameter("DISABLED");
         
-        p2.runAsynchronously();
+           p2.runAsynchronously();
         
-        //give some time to do the task       
-        delay(10000);
+           // Give some time to do the task       
+           delay(10000);
         
-        loop_number = loop_counter;
-      }  
+           loop_number = loop_counter;
+        }  
     }
    
     client.stop();
