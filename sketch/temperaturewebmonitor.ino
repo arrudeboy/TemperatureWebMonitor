@@ -123,6 +123,7 @@ void loop() {
       
     }
         
+    // Reading string command from the client 
     String command = client.readString();
     command.trim();
 
