@@ -11,7 +11,7 @@ IMPORTANT INFO:
  
  - I've wrote a complete tutorial for mounting the entire scenario project. It includes IDE installation for Arduino Yun developers, the setup to starting up the web server into the board, and others configurations. The tuturial was wrote in Spanish but in a few days I will upload a translation to English of this. In order to get the tutorial, please write me an email to arturofelixchari@gmail.com.
  
- - For see this project application running please watch on my demostration video at youtube (http://youtu.be/Emm25DyEQ_M)
+ - For see this project application running please watch on my youtube demostration video (http://youtu.be/Emm25DyEQ_M)
 
 
 
