@@ -5,7 +5,7 @@ This project concerns the implementation of a security platform for the manageme
 The project specifications document is part of an electrical engineer thesis grade. If you want to view the full documentation just for learning more about this, please contact to me by sending an email to the email address that appears in the next section.
 
 
-IMPORTANT INFO:
+MAIN NOTES:
 
  - I assume that who try to implement this project has basic knowledge about Arduino boards and Linux enviroments. Otherwise, please visit the Arduino Yun official web site for gettting started (http://arduino.cc/en/Guide/ArduinoYun).
  
