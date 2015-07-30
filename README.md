@@ -1,7 +1,7 @@
 TemperatureWebMonitor
 =====================
 
-This project concerns the implementation of a security platform for the management and control of an HPCC (High Performance Computing Cluster). Based on open source technologies applied to products such as Arduino Yun and Scientific Linux OS.
+The project concerns the security platform implementation for the management and the real-time monitoring inside a HPCC (High Performance Computing Cluster) environment. Development is based on open source technologies applied to products such as Netduino Plus, Arduino Yun and Scientific Linux OS.
 The project specifications document is part of an electrical engineer thesis grade. If you want to view the full documentation just for learning more about this, please contact to me by sending an email to the email address that appears in the next section.
 
 
