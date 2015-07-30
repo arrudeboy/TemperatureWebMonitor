@@ -7,8 +7,8 @@ The project specifications document is part of an electrical engineer thesis gra
 
 MAIN NOTES:
 
- - I assume that who try to implement this project has basic knowledge about Arduino boards and Linux enviroments. Otherwise, please visit the Arduino Yun official web site for gettting started (http://arduino.cc/en/Guide/ArduinoYun).
+ - I assume that who try to implement this project has basic knowledge about Arduino boards and Linux environments. Otherwise, please visit the Arduino Yun official web site for gettting started (http://arduino.cc/en/Guide/ArduinoYun).
  
- - I've wrote a complete tutorial for mounting the entire scenario project. It includes IDE installation for Arduino Yun developers, the setup to starting up the web server into the board, and others configurations. The tuturial was wrote in Spanish but in a few days I will upload a translation to English of this. In order to get the tutorial, please write me an email to arturofelixchari@gmail.com.
+ - I've wrote a complete tutorial for mounting the entire scenario project. It includes IDE installation for Arduino Yun developers, the setup to starting up the web server into the board, and some others configurations. The tuturial is only in Spanish version still. In order to get the tutorial, please write me an email to arturofelixchari@gmail.com.
  
  - For see this project application running please watch on my demostration video in youtube (http://youtu.be/Emm25DyEQ_M)
