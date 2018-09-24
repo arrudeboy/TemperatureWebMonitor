@@ -1,7 +1,7 @@
 TemperatureWebMonitor
 =====================
 
-Member of an independent research and development group integrated by professional software engineers and electronic engineers. The project concerns the security platform implementation for the management and the real-time monitoring inside a HPCC (High
+The project concerns the security platform implementation for the management and the real-time monitoring inside a HPCC (High
 Performance Computing Cluster) environment. The code development is based on open source technologies applied to products such as Netduino Plus, Arduino Yun and Scientific Linux OS.
 The project specifications document is part of an electronic engineer thesis grade. If you want to view the full documentation for learning more about this, please contact me by sending an email to the email address that appears in the section below.
 
